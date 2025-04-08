@@ -17,35 +17,22 @@
   <body>
     <a-scene
       vr-mode-ui="enabled: false"
+      embedded
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
-      <!-- Load the GLTF model -->
-      <a-assets>
-        <a-asset-item id="tree" src="angel_sitting_statue/scene.gltf"></a-asset-item>
-      </a-assets>
-
-
-      <!-- Place the GLTF model in the world at GPS coordinates -->
-      <a-entity
-        gltf-model="#tree"
-        gps-entity-place="latitude: 53.228376; longitude: -4.129557;"
-        position="0 40 0"
+      <!-- AR Text -->
+      <a-text
+        value="Bangor Main Arts"
+        look-at="[gps-camera]"
         scale="20 20 20"
-      ></a-entity>
+        position="0 2 0"
+        color="#FFCC00"
+        align="center"
+        gps-entity-place="latitude: 53.227848; longitude: -4.129496;"
+      ></a-text>
 
-      <!-- Camera Setup with Fixed Text at the Top of the Screen -->
-      <a-camera gps-camera rotation-reader>
-        <!-- This text stays at the top of the screen -->
-        <a-entity position="0 0 -1.5">
-          <a-text
-            value="Bangor Main Arts"
-            align="center"
-            color="#FFCC00"
-            width="6"
-            position="0 40 0"
-          ></a-text>
-        </a-entity>
-      </a-camera>
+      <!-- Camera -->
+      <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
 </html>
