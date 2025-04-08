@@ -23,29 +23,30 @@
     >
       <!-- Preload assets -->
       <a-assets>
-        <!-- Update the path if hosted elsewhere -->
         <a-asset-item 
           id="treeModel" 
-          src="arrow_sign_direction_navigation_pointer_symbol/scene.gltf">
+          src="Application/arrow_sign_direction_navigation_pointer_symbol/scene.gltf">
         </a-asset-item>
       </a-assets>
 
-      <!-- Text label that always faces the user -->
-      <a-text
-        value="You're near the marker!"
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        position="0 5 0"
-        gps-entity-place="latitude: 53.222381; longitude: -4.128803;"
-      ></a-text>
+      <!-- Entity with both model and text -->
+      <a-entity gps-entity-place="latitude: 53.222381; longitude: -4.128803;">
+        <!-- Model -->
+        <a-entity 
+          gltf-model="#treeModel" 
+          scale="0.05 0.05 0.05"
+          rotation="0 180 0"
+          position="0 0 0"
+          look-at="[gps-camera]">
+        </a-entity>
 
-      <!-- GLTF Model at GPS location -->
-      <a-entity 
-        gps-entity-place=""latitude: 53.222381; longitude: -4.128803;" 
-        gltf-model="#treeModel" 
-        scale="0.05 0.05 0.05"
-        rotation="0 180 0"
-        look-at="[gps-camera]">
+        <!-- Text -->
+        <a-text
+          value="You're near the marker!"
+          look-at="[gps-camera]"
+          scale="100 100 100"
+          position="0 4 0"
+        ></a-text>
       </a-entity>
 
       <!-- AR Camera -->
@@ -53,5 +54,3 @@
     </a-scene>
   </body>
 </html>
-
-     
