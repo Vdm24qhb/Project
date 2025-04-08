@@ -1,0 +1,11 @@
+Model Information:
+* title:	Angel (Sitting) Statue
+* source:	https://sketchfab.com/3d-models/angel-sitting-statue-b5e35cd9495843d3aa636efcdada0b3b
+* author:	David Wigforss (https://sketchfab.com/dwigfor)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Angel (Sitting) Statue" (https://sketchfab.com/3d-models/angel-sitting-statue-b5e35cd9495843d3aa636efcdada0b3b) by David Wigforss (https://sketchfab.com/dwigfor) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
