@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GeoAR.js Demo with GLTF Model</title>
+    <title>GeoAR.js - Text Only</title>
 
     <!-- A-Frame Core -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
@@ -21,33 +21,14 @@
       embedded
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
-      <!-- Preload assets -->
-      <a-assets>
-        <a-asset-item 
-          id="treeModel" 
-          src="Application/arrow_sign_direction_navigation_pointer_symbol/scene.gltf">
-        </a-asset-item>
-      </a-assets>
-
-      <!-- Entity with both model and text -->
-      <a-entity gps-entity-place="latitude: 53.222381; longitude: -4.128803;">
-        <!-- Model -->
-        <a-entity 
-          gltf-model="#treeModel" 
-          scale="0.05 0.05 0.05"
-          rotation="0 180 0"
-          position="0 0 0"
-          look-at="[gps-camera]">
-        </a-entity>
-
-        <!-- Text -->
-        <a-text
-          value="You're near the marker!"
-          look-at="[gps-camera]"
-          scale="100 100 100"
-          position="0 4 0"
-        ></a-text>
-      </a-entity>
+      <!-- Just text, no 3D model -->
+      <a-text
+        value="You're near the marker!"
+        look-at="[gps-camera]"
+        scale="100 100 100"
+        position="0 4 0"
+        gps-entity-place="latitude: 53.222381; longitude: -4.128803;"
+      ></a-text>
 
       <!-- AR Camera -->
       <a-camera gps-camera rotation-reader></a-camera>
