@@ -3,72 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GeoAR.js Demo with GLTF Model</title><!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GeoAR.js Demo</title>
+    <title>GeoAR.js Demo - Fixed</title>
 
-    <!-- A-Frame Core -->
+    <!-- A-Frame & AR.js -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-
-    <!-- Look-at Component -->
     <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
-
-    <!-- AR.js with GPS support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-  </head>
-
-  <body style="margin: 0; overflow: hidden">
-    <a-scene
-      embedded
-      vr-mode-ui="enabled: false"
-      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-      renderer="logarithmicDepthBuffer: true;"
-    >
-      <!-- Load model asset -->
-      <a-assets>
-        <a-asset-item 
-          id="statueModel" 
-          src="angel_sitting_statue/scene.gltf">
-        </a-asset-item>
-      </a-assets>
-
-      <!-- Container entity to hold model and text (same GPS) -->
-      <a-entity gps-entity-place="latitude: 53.222368; longitude: -4.128929;">
-        <!-- Model -->
-        <a-entity 
-          gltf-model="#statueModel" 
-          scale="0.05 0.05 0.05" 
-          position="0 0 0"
-          rotation="0 180 0"
-          look-at="[gps-camera]">
-        </a-entity>
-
-        <!-- Text -->
-        <a-text
-          value="You're near the marker!"
-          look-at="[gps-camera]"
-          scale="80 80 80"
-          position="0 4 0"
-        ></a-text>
-      </a-entity>
-
-      <!-- Camera -->
-      <a-camera gps-camera rotation-reader></a-camera>
-    </a-scene>
-  </body>
-</html>
-
-
-    <!-- A-Frame Core -->
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-
-    <!-- Look-at Component -->
-    <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
-
-    <!-- AR.js with GPS support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   </head>
 
@@ -78,34 +17,30 @@
       embedded
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
-      <!-- Preload assets -->
+      <!-- Assets -->
       <a-assets>
-        <!-- Update the path if hosted elsewhere -->
-        <a-asset-item 
-          id="treeModel" 
-          src="angel_sitting_statue/scene.gltf">
-        </a-asset-item>
+        <a-asset-item id="treeModel" src="arrow_sign_direction_navigation_pointer_symbol/scene.gltf"></a-asset-item>
       </a-assets>
 
-      <!-- Text label that always faces the user -->
-      <a-text
-        value="You're near the marker!"
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        position="0 5 0"
-        gps-entity-place="latitude: 53.222368; longitude: -4.128929;"
-      ></a-text>
-
-      <!-- GLTF Model at GPS location -->
+      <!-- Model -->
       <a-entity 
-        gps-entity-place="latitude: 53.222368; longitude: -4.128929;"
+        gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;" 
         gltf-model="#treeModel" 
         scale="0.05 0.05 0.05"
         rotation="0 180 0"
         look-at="[gps-camera]">
       </a-entity>
 
-      <!-- AR Camera -->
+      <!-- Text -->
+      <a-text
+        value="You're near the marker!"
+        look-at="[gps-camera]"
+        scale="120 120 120"
+        gps-entity-place="latitude: 53.2277722; longitude: -4.1303182;"
+        position="0 5 0"
+      ></a-text>
+
+      <!-- Only ONE camera -->
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
